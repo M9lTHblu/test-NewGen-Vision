@@ -3,7 +3,7 @@ install:
 start:
 	npx webpack  serve --mode=development
 test:
-	npm jest
+	npx jest
 build:
 	rm -rf dist
 	npx webpack --mode=production
