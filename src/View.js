@@ -15,7 +15,7 @@ export default class View {
   }
 
   item(name, prices) {
-    return `<li class="flex gap-1 p-1 text-cyan">
+    return `<li class="list-item">
       <span>${name}</span>
       <span>${this.formattingPrice(prices)}</span>
     </li>`;

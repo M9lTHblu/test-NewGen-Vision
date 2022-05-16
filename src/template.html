@@ -7,29 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body class="">
-<div class="container flex column gap-1">
-    <div class="flex gap-1">
-        <label class="w-100">
-            От
-            <input class="input w-100" type="number" name="min" />
+<body>
+<div class="container">
+    <div class="controls">
+        <label class="label">
+            <input class="input" type="number" name="min" placeholder="От"/>
         </label>
-        <label class="w-100">
-            До
-            <input class="input w-100" type="number" name="max" />
+        <label class="label">
+            <input class="input" type="number" name="max" placeholder="До"/>
         </label>
-    </div>
-    <div class='flex space-around'>
-        <h2>Input Data</h2>
-        <h2>Output Data</h2>
     </div>
     <div class="data">
-        <div class="bg-dark p-1">
-            <ul data-view="input-data">
+        <div class="data-item">
+            <h2 class="title">Input Data</h2>
+            <ul class="list" data-view="input-data">
             </ul>
         </div>
-        <div class="bg-dark p-1">
-            <ul  data-view="output-data">
+        <div class="data-item">
+            <h2 class="title">Output Data</h2>
+            <ul class="list" data-view="output-data">
             </ul>
         </div>
     </div>
