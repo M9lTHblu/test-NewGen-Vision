@@ -5,8 +5,8 @@ import filter from './filter';
 
 export default () => {
   const state = {
-      min: null,
-      max: null,
+    min: null,
+    max: null,
     result: [],
     items: courses,
   };
@@ -33,11 +33,11 @@ export default () => {
   });
 
   document.addEventListener(
-      'DOMContentLoaded',
-      () => {
-        const {min, max} = state
-        state.result = filter(state.items, [state.min, state.max]);
-        view.renderData(state.items, state.result)
-      }
+    'DOMContentLoaded',
+    () => {
+      const { min, max } = state;
+      state.result = filter(state.items, [min, max]);
+      view.renderData(state.items, state.result);
+    },
   );
 };
