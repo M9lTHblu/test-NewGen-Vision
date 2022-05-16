@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body class="">
+<div class="container flex column gap-1">
+    <div class="flex gap-1">
+        <label class="w-100">
+            От
+            <input class="input w-100" type="number" name="min" />
+        </label>
+        <label class="w-100">
+            До
+            <input class="input w-100" type="number" name="max" />
+        </label>
+    </div>
+    <div class='flex space-around'>
+        <h2>Input Data</h2>
+        <h2>Output Data</h2>
+    </div>
+    <div class="data">
+        <div class="bg-dark p-1">
+            <ul data-view="input-data">
+            </ul>
+        </div>
+        <div class="bg-dark p-1">
+            <ul  data-view="output-data">
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
