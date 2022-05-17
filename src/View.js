@@ -3,6 +3,16 @@ export default class View {
   init() {
     this.dataInput = document.querySelector('[data-view="input-data"]');
     this.dataOutput = document.querySelector('[data-view="output-data"]');
+    this.inputs = document.querySelectorAll('input[type="number"]');
+    this.select = document.querySelector('select[name="sortParam"]');
+  }
+
+  getInputs() {
+    return this.inputs;
+  }
+
+  getSelect() {
+    return this.select;
   }
 
   formattingPrice([a, b]) {

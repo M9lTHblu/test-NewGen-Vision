@@ -11,10 +11,10 @@
 <div class="container">
     <div class="controls">
         <label class="label">
-            <input class="input" type="number" name="min" placeholder="От"/>
+            <input class="input" type="number" name="min" value="" placeholder="От"/>
         </label>
         <label class="label">
-            <input class="input" type="number" name="max" placeholder="До"/>
+            <input class="input" type="number" name="max" value="" placeholder="До"/>
         </label>
     </div>
     <div class="data">
@@ -29,6 +29,12 @@
             </ul>
         </div>
     </div>
+    <label>
+        <select name="sortParam">
+            <option selected value="min">по возрастанию цены</option>
+            <option value="max">по убыванию цены</option>
+        </select>
+    </label>
 </div>
 </body>
 </html>

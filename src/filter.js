@@ -1,4 +1,4 @@
-export const sort = ([a, b]) => (b > a ? [a, b] : [b, a]);
+const sort = ([a, b]) => (b > a ? [a, b] : [b, a]);
 
 const isMatchItem = (ranges, prices) => {
   const [, maxRange] = sort(ranges);

@@ -2,13 +2,15 @@ import onChange from 'on-change';
 import courses from './data';
 import View from './View';
 import filter from './filter';
+import sort from './sort';
 
 export default () => {
   const state = {
+    sortParam: 'min',
     min: null,
     max: null,
     result: [],
-    items: courses,
+    items: [],
   };
 
   const view = new View();
@@ -17,8 +19,8 @@ export default () => {
   const watchedState = onChange(
     state,
     () => {
-      const { items, max, min } = state;
-      state.result = filter(items, [min, max]);
+      const filtered = filter(state.items, [state.min, state.max]);
+      state.result = sort(state.sortParam, filtered);
       view.renderData(state.items, state.result);
     },
   );
@@ -27,16 +29,18 @@ export default () => {
     watchedState[name] = value;
   };
 
-  const inputs = document.querySelectorAll('input[type="number"]');
-  inputs.forEach((input) => {
+  view.getInputs().forEach((input) => {
     input.addEventListener('input', handleChange);
   });
+
+  view.getSelect().addEventListener('change', handleChange);
 
   document.addEventListener(
     'DOMContentLoaded',
     () => {
-      const { min, max } = state;
-      state.result = filter(state.items, [min, max]);
+      state.items = courses;
+      const filtered = filter(state.items, [state.min, state.max]);
+      state.result = sort(state.sortParam, filtered);
       view.renderData(state.items, state.result);
     },
   );
