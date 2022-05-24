@@ -13,7 +13,8 @@ const isMatchItem = (ranges, prices) => {
   return maxPrice !== minPrice && maxPrice <= maxRange;
 };
 
-export default (coll, ranges) => {
+// Реализация фильтра с использованием цикла
+export const filter1 = (coll, ranges) => {
   if (!ranges[0] && !ranges[1]) {
     return coll;
   }
@@ -26,4 +27,12 @@ export default (coll, ranges) => {
   }
 
   return result;
+};
+
+// Реализация фильтра c использованием стандартных методов массивов
+export const filter2 = (coll, ranges) => {
+  if (!ranges[0] && !ranges[1]) {
+    return coll;
+  }
+  return coll.filter(({ prices }) => isMatchItem(ranges, prices));
 };

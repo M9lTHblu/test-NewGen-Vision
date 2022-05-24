@@ -1,7 +1,7 @@
 import onChange from 'on-change';
 import courses from './data';
 import View from './View';
-import filter from './filter';
+import { filter1 } from './filter';
 import sort from './sort';
 
 export default () => {
@@ -19,7 +19,7 @@ export default () => {
   const watchedState = onChange(
     state,
     () => {
-      const filtered = filter(state.items, [state.min, state.max]);
+      const filtered = filter1(state.items, [state.min, state.max]);
       state.result = sort(state.sortParam, filtered);
       view.renderData(state.items, state.result);
     },
@@ -39,7 +39,7 @@ export default () => {
     'DOMContentLoaded',
     () => {
       state.items = courses;
-      const filtered = filter(state.items, [state.min, state.max]);
+      const filtered = filter1(state.items, [state.min, state.max]);
       state.result = sort(state.sortParam, filtered);
       view.renderData(state.items, state.result);
     },
